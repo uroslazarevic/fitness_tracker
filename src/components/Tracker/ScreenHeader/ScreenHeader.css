@@ -1,0 +1,16 @@
+.screen-header {
+  padding: 24px 27px;
+  background: #fff;
+  border-radius: 28px; }
+  .screen-header .header-title {
+    font-size: 34px;
+    line-height: 41px;
+    font-family: helvetica neue;
+    color: #00b6a3;
+    letter-spacing: 0.48px;
+    margin-bottom: 10px; }
+  .screen-header .header-subtitle {
+    font-size: 16px;
+    line-height: 19px;
+    color: #898694;
+    letter-spacing: 0.24px; }

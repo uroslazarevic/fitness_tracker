@@ -1,2 +1,7 @@
-// Home Page
-@import './Home/Home.scss';
+// Tracker
+@import './Tracker/Tracker.scss';
+@import './Tracker/ScreenHeader/ScreenHeader.scss';
+@import './Tracker/DaysNavigation/DaysNavigation.scss';
+@import './Tracker/ScreenRectangles/DayRectangle/DayRectangle.scss';
+@import './Tracker/ScreenRectangles/ActivityRectangle/ActivityRectangle.scss';
+@import './Tracker/Screens/MainScreen/MainScreen.scss';

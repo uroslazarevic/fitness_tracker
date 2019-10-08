@@ -1,0 +1,18 @@
+.tracker {
+  background: rgba(0, 0, 0, 0.7);
+  height: 110vh;
+  position: relative;
+  .screen {
+    margin: {
+      top: 20px;
+      bottom: 20px;
+    }
+    padding: 18px 18px 155px 18px;
+    background: #fff;
+    background-image: linear-gradient(152deg, #34c7a0, #008aa2);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
