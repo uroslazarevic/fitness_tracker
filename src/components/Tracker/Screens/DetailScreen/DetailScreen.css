@@ -1,3 +1,66 @@
-.main-screen {
+.activity-details {
+  font-family: Helvetica, sans-serif;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  background: #fff;
+  border-radius: 28px 28px 0 0;
+  padding-top: 40px;
+  padding-bottom: 30px; }
+  .activity-details .top-content {
+    margin: 0 55px;
+    height: 231px;
+    width: 231px;
+    border-radius: 100%;
+    margin: 0 auto;
+    flex-direction: column;
+    display: flex;
+    border: 8px solid #00b6a3;
+    align-items: center;
+    justify-content: center; }
+    .activity-details .top-content .activity-icon {
+      width: 40px;
+      background: rgba(0, 182, 163, 0.25);
+      height: 40px;
+      display: flex;
+      align-self: center;
+      align-items: center;
+      justify-content: center;
+      border-radius: 100%;
+      color: #fff; }
+    .activity-details .top-content .activity-info-name {
+      font-size: 20px;
+      line-height: 24px;
+      padding: 6px 0; }
+    .activity-details .top-content .activity-result {
+      font-size: 48px;
+      line-height: 58px;
+      letter-spacing: 1.15px; }
+  .activity-details .middle-content {
+    padding-top: 30px;
+    padding-bottom: 80px;
+    text-align: center; }
+    .activity-details .middle-content .activity-mark {
+      font-size: 20px;
+      line-height: 24px; }
+    .activity-details .middle-content .support-text {
+      font-size: 40px;
+      line-height: 58px; }
+  .activity-details .bottom-content {
+    display: grid;
+    width: 339px;
+    margin: 0 auto;
+    grid-template-columns: repeat(3, 1fr); }
+    .activity-details .bottom-content .column {
+      text-align: center;
+      border-right: 2px solid #b3b3b3;
+      padding: 0 12.5px; }
+      .activity-details .bottom-content .column:last-child {
+        border-right: initial; }
+      .activity-details .bottom-content .column .unit {
+        font-size: 18px;
+        line-height: 22px;
+        color: #b3b3b3; }
+      .activity-details .bottom-content .column .result {
+        font-size: 34px;
+        line-height: 49px;
+        color: #00b6a3; }

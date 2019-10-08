@@ -1,31 +1,43 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
-import { ScreenHeader, DaysNavigation, MainScreen } from 'components';
+// Components
+import { ScreenHeader, DaysNavigation, MainScreen, DetailScreen } from 'components';
 
 // Utilis
 import { trackerAPI } from 'utils';
 
-export const Tracker = () => {
-  const [trackedHistory, setTrackedHistory] = useState([]);
+export class Tracker extends React.Component {
+  state = { trackedHistory: [], selectedDay: '' };
 
-  useEffect(async () => {
+  async componentDidMount() {
     const history = await trackerAPI.getTrackedHistory();
-    setTrackedHistory(history);
-
-    console.log(history);
-  }, []);
-
-  if (trackedHistory.length === 0) {
-    return <div>Loading...</div>;
+    this.setState({ trackedHistory: history });
   }
 
-  return (
-    <div className="tracker">
-      <div className="screen">
-        <ScreenHeader className="welcome" />
-        <DaysNavigation trackedHistory={trackedHistory} />
-        <MainScreen trackedHistory={trackedHistory} />
+  handleDaySelect = selectedDay => () => this.setState({ selectedDay });
+
+  render() {
+    const { trackedHistory, selectedDay } = this.state;
+    if (trackedHistory.length === 0) {
+      return <div>Loading...</div>;
+    }
+
+    return (
+      <div className="tracker">
+        <div className="screen">
+          <ScreenHeader
+            className={!selectedDay ? 'welcome' : 'detail'}
+            selectedDay={selectedDay}
+            setMainScreen={() => this.setState({ selectedDay: '' })}
+          />
+          <DaysNavigation
+            handleDaySelect={this.handleDaySelect}
+            selectedDay={selectedDay}
+            trackedHistory={trackedHistory}
+          />
+          {!selectedDay ? <MainScreen trackedHistory={trackedHistory} /> : <DetailScreen selectedDay={selectedDay} />}
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}

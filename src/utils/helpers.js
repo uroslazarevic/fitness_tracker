@@ -16,8 +16,18 @@ export const calculateActivities = steps => {
   const durationMin = Math.floor(new BigNumber(duration % 1).times(60).toString());
 
   return {
-    distance: Math.floor(Number(BNSteps.times(STEP_DISTANCE_IN_METERS).toString())),
-    calories: Math.floor(Number(BNSteps.times(BURNED_CALORIES_ON_STEP).toString())),
-    duration: `${durationHours}:${durationMin}`,
+    distance: {
+      unit: 'km',
+      value: Number(
+        BNSteps.times(STEP_DISTANCE_IN_METERS)
+          .dividedBy(1000)
+          .toString()
+      ).toLocaleString(),
+    },
+    calories: {
+      unit: 'cal',
+      value: Math.floor(Number(BNSteps.times(BURNED_CALORIES_ON_STEP).toString())).toLocaleString(),
+    },
+    duration: { hours: { unit: 'h', value: durationHours }, minutes: { unit: 'min', value: durationMin } },
   };
 };

@@ -1,6 +1,6 @@
 .activity-day {
   padding: 25px 20px;
-  box-shadow: inset 0 0 0 99999px rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.25);
   border-radius: 28px;
   color: #fff;
   display: flex;
@@ -10,7 +10,7 @@
   .activity-description {
     display: flex;
 
-    span {
+    .activity-icon {
       width: 40px;
       margin-right: 10px;
       background: rgba(255, 255, 255, 0.25);

@@ -1,47 +1,45 @@
 import React from 'react';
 
-import { ActivityRectangle } from 'components';
-
 import { calculateActivities } from 'utils';
 
-export const MainScreen = ({ trackedHistory }) => {
-  const totalActivity = () => {
-    const totalSteps = trackedHistory.reduce((acc, x) => {
-      acc += x.steps;
-      return acc;
-    }, 0);
-    const { calories, duration } = calculateActivities(totalSteps);
-    const [hours, minutes] = duration.split(':').map(x => Number(x));
-    return {
-      averageDuration: `${hours / trackedHistory.length}h:${minutes / trackedHistory.length}min`,
-      calories,
-      totalSteps,
-    };
+export const DetailScreen = ({ selectedDay }) => {
+  const activity = calculateActivities(selectedDay.steps);
+  const setActivityMark = () => {
+    return selectedDay.steps > 2000 ? 'Excelent' : 'Very good';
   };
-
   return (
-    <div className="main-activities">
-      <ActivityRectangle
-        className="average-duration"
-        activityTitle={'Activity'}
-        activitySubtitle={'Average'}
-        activityResult={totalActivity().averageDuration}
-        iconName={'access_alarm'}
-      />
-      <ActivityRectangle
-        className="total-steps"
-        activityTitle={'Steps'}
-        activitySubtitle={'Total'}
-        activityResult={totalActivity().totalSteps}
-        iconName={'directions_run'}
-      />
-      <ActivityRectangle
-        className="calories-burned"
-        activityTitle={'Calories'}
-        activitySubtitle={'Total Burned'}
-        activityResult={totalActivity().calories}
-        iconName={'whatshot'}
-      />
+    <div className="activity-details">
+      <div className="top-content">
+        <span className="activity-icon">
+          <i className="material-icons">directions_run</i>
+        </span>
+        <div className="activity-info-name">Steps</div>
+        <div className="activity-result">{selectedDay.steps.toLocaleString()}</div>
+      </div>
+      <div className="middle-content">
+        <div className="activity-mark">{setActivityMark()}</div>
+        <div className="support-text">Keep going!</div>
+      </div>
+      <div className="bottom-content">
+        {Object.keys(activity).map(key => {
+          if (key === 'duration') {
+            return (
+              <div key={key} className={`column ${key}-column`}>
+                <div className="unit">{activity[key].hours.unit}</div>
+                <div className="result">
+                  {(activity[key].hours.value + activity[key].minutes.value / 60).toFixed(2)}
+                </div>
+              </div>
+            );
+          }
+          return (
+            <div key={key} className={`column ${key}-column`}>
+              <div className="unit">{activity[key].unit}</div>
+              <div className="result">{activity[key].value}</div>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };

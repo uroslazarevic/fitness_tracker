@@ -16,10 +16,10 @@ const getTrackedHistory = async () => {
   const { data } = await trackerAxios.get();
   const history = data
     .map(i => {
-      const LLformat = moment(i.timestamp).format('LL');
+      const LLFormat = moment(i.timestamp).format('LL');
       const day = moment(i.timestamp).day();
       const dayInMonth = moment(i.timestamp).date();
-      return { steps: i.steps, date: { dayName: daysOfWeek[day], dayInMonth, LLformat } };
+      return { steps: i.steps, date: { dayName: daysOfWeek[day], dayInMonth, LLFormat } };
     })
     .reduce((acc, x) => {
       const { steps, date } = x;

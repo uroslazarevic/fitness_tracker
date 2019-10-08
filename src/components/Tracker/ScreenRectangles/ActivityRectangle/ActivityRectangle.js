@@ -4,7 +4,7 @@ export const ActivityRectangle = ({ activityTitle, activitySubtitle, activityRes
   return (
     <div className={`activity-day ${className}`}>
       <div className="activity-description">
-        <span>
+        <span className="activity-icon">
           <i className="material-icons">{iconName}</i>
         </span>
         <div className="header-content">

@@ -11,35 +11,36 @@ export const MainScreen = ({ trackedHistory }) => {
       return acc;
     }, 0);
     const { calories, duration } = calculateActivities(totalSteps);
-    const [hours, minutes] = duration.split(':').map(x => Number(x));
     return {
-      averageDuration: `${hours / trackedHistory.length}h:${minutes / trackedHistory.length}min`,
-      calories,
+      averageDuration: `${duration.hours.value / trackedHistory.length}${duration.hours.unit}:${duration.minutes.value /
+        trackedHistory.length}${duration.minutes.unit}`,
+      calories: calories.value,
       totalSteps,
     };
   };
 
+  const activity = totalActivity();
   return (
     <div className="main-activities">
       <ActivityRectangle
         className="average-duration"
         activityTitle={'Activity'}
         activitySubtitle={'Average'}
-        activityResult={totalActivity().averageDuration}
+        activityResult={activity.averageDuration}
         iconName={'access_alarm'}
       />
       <ActivityRectangle
         className="total-steps"
         activityTitle={'Steps'}
         activitySubtitle={'Total'}
-        activityResult={totalActivity().totalSteps}
+        activityResult={activity.totalSteps.toLocaleString()}
         iconName={'directions_run'}
       />
       <ActivityRectangle
         className="calories-burned"
         activityTitle={'Calories'}
         activitySubtitle={'Total Burned'}
-        activityResult={totalActivity().calories}
+        activityResult={activity.calories}
         iconName={'whatshot'}
       />
     </div>

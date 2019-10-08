@@ -6,6 +6,7 @@ import { DayRectangle } from './Tracker/ScreenRectangles/DayRectangle/DayRectang
 import { DaysNavigation } from './Tracker/DaysNavigation/DaysNavigation';
 import { ActivityRectangle } from './Tracker/ScreenRectangles/ActivityRectangle/ActivityRectangle';
 import { MainScreen } from './Tracker/Screens/MainScreen/MainScreen';
+import { DetailScreen } from './Tracker/Screens/DetailScreen/DetailScreen';
 
 export {
   // Components
@@ -17,4 +18,5 @@ export {
   DaysNavigation,
   ActivityRectangle,
   MainScreen,
+  DetailScreen,
 };
