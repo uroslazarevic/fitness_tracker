@@ -1,6 +1,11 @@
 .activity-details {
   font-family: Helvetica, sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   background: #fff;
   border-radius: 28px 28px 0 0;
@@ -12,18 +17,34 @@
     width: 231px;
     border-radius: 100%;
     margin: 0 auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     border: 8px solid #00b6a3;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center; }
     .activity-details .top-content .activity-icon {
       width: 40px;
       background: rgba(0, 182, 163, 0.25);
       height: 40px;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -ms-flex-item-align: center;
       align-self: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
       align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
       justify-content: center;
       border-radius: 100%;
       color: #fff; }

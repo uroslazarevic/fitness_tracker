@@ -1,25 +1,37 @@
+@import 'assets/style/app.variables';
+
 .rectangle-day {
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, $bg-transparency);
   padding: 11px;
-  border-radius: 28px;
-  color: #fff;
+  border-radius: $rectangle-small-radius;
+  color: $white-1;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   text-align: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   font-size: 16px;
   line-height: 19px;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   cursor: pointer;
+  -webkit-transition: background 0.2s ease-in;
   transition: background 0.2s ease-in;
 
   &:hover {
-    opacity: 0.7;
+    transition: initial;
+    background: rgba(255, 255, 255, 0.35);
   }
 
   &.rectangle-active {
-    background: #fff;
-    color: #00b6a3;
+    background: $white-1;
+    color: $green-2;
 
     &:hover {
       opacity: 1;
@@ -28,6 +40,6 @@
 
   .day-name,
   .day-in-month {
-    opacity: 0.7;
+    opacity: $text-opacity;
   }
 }

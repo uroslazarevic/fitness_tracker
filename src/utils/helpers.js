@@ -28,6 +28,6 @@ export const calculateActivities = steps => {
       unit: 'cal',
       value: Math.floor(Number(BNSteps.times(BURNED_CALORIES_ON_STEP).toString())).toLocaleString(),
     },
-    duration: { hours: { unit: 'h', value: durationHours }, minutes: { unit: 'min', value: durationMin } },
+    duration: { hours: { unit: 'hours', value: durationHours }, minutes: { unit: 'min', value: durationMin } },
   };
 };

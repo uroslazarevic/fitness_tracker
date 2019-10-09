@@ -1,5 +1,6 @@
 import React from 'react';
 
+// Utils
 import { calculateActivities } from 'utils';
 
 export const DetailScreen = ({ selectedDay }) => {
@@ -7,6 +8,7 @@ export const DetailScreen = ({ selectedDay }) => {
   const setActivityMark = () => {
     return selectedDay.steps > 2000 ? 'Excelent' : 'Very good';
   };
+
   return (
     <div className="activity-details">
       <div className="top-content">
@@ -14,7 +16,7 @@ export const DetailScreen = ({ selectedDay }) => {
           <i className="material-icons">directions_run</i>
         </span>
         <div className="activity-info-name">Steps</div>
-        <div className="activity-result">{selectedDay.steps.toLocaleString()}</div>
+        <div className="activity-result">{selectedDay && selectedDay.steps.toLocaleString()}</div>
       </div>
       <div className="middle-content">
         <div className="activity-mark">{setActivityMark()}</div>

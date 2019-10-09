@@ -8,13 +8,19 @@ export const DaysNavigation = ({ trackedHistory, handleDaySelect, selectedDay })
     return selectedDay && selectedDay.date.dayName === timePeriod.date.dayName ? true : false;
   };
 
+  const onDaySelect = timePeriod => () => {
+    // If same date is selected => return
+    if (selectedDay && timePeriod.date.dayName === selectedDay.date.dayName) return;
+    handleDaySelect(timePeriod);
+  };
+
   return (
     <div className="days-navigation">
       {trackedHistory.map(timePeriod => (
         <DayRectangle
           key={timePeriod.date.dayName}
           date={timePeriod.date}
-          handleDaySelect={() => handleDaySelect(timePeriod)}
+          handleDaySelect={() => onDaySelect(timePeriod)}
           isActive={isActive(timePeriod)}
         />
       ))}

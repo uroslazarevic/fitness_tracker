@@ -2,14 +2,13 @@
 $green-1: #34c7a0;
 $green-2: #00b6a3;
 $blue-1: #008aa2;
-$white: #fff;
+$white-1: #fff;
 $gray-1: #898694;
-$dark-1: #0000001a;
 
 // All pages
-$transparency-bg: 0.25;
-$opacity-text: 0.7;
+$bg-transparency: 0.25;
+$text-opacity: 0.7;
 $rectangle-small-radius: 23px;
 $rectangle-medium-radius: 28px;
 $rectangle-details-radius: 28px 28px 0 0;
-$bg-gradient: linear-gradient(to right $green-1 0%, $blue-1 100%);
+$bg-gradient: linear-gradient(152deg, $green-1, $blue-1);

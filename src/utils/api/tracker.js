@@ -14,6 +14,8 @@ const getTrackedHistory = async () => {
   const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
   const { data } = await trackerAxios.get();
+
+  // Map and flatten array
   const history = data
     .map(i => {
       const LLFormat = moment(i.timestamp).format('LL');

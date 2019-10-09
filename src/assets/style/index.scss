@@ -1,10 +1,14 @@
 // Fonts
 @import './../fonts/fonts.scss';
+
 // App Variables
 @import './app.variables';
+
+// Animations
+@import './animations/index.scss';
+
 // Global
 @import './global/global.scss';
+
 // Components
 @import 'components/index.scss';
-// Containers
-// @import '../containers/index.scss';

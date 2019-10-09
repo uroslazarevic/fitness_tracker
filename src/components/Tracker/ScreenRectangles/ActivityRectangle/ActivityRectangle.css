@@ -1,26 +1,44 @@
 .activity-day {
+  cursor: pointer;
   padding: 25px 20px;
   background: rgba(255, 255, 255, 0.25);
   border-radius: 28px;
   color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
   flex-direction: row;
   margin-bottom: 15px; }
+  .activity-day:hover {
+    background: rgba(255, 255, 255, 0.35); }
   .activity-day .activity-description {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex; }
     .activity-day .activity-description .activity-icon {
       width: 40px;
       margin-right: 10px;
       background: rgba(255, 255, 255, 0.25);
       height: 40px;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -ms-flex-item-align: center;
       align-self: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
       align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
       justify-content: center;
       border-radius: 100%; }
     .activity-day .activity-description .header-content .title {
       font-size: 20px;
-      line-height: 25px; }
+      line-height: 25px;
+      margin-bottom: 3px; }
     .activity-day .activity-description .subtitle {
       font-size: 16px;
       line-height: 19px;
@@ -31,6 +49,9 @@
     line-height: 46px; }
   .activity-day.average-duration {
     padding: 25px 20px 46px 20px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column; }
     .activity-day.average-duration .activity-result {
       margin-left: 0;

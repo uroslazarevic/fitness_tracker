@@ -1,7 +1,9 @@
 import React from 'react';
 
+// Components
 import { ActivityRectangle } from 'components';
 
+// Utils
 import { calculateActivities } from 'utils';
 
 export const MainScreen = ({ trackedHistory }) => {
@@ -12,8 +14,8 @@ export const MainScreen = ({ trackedHistory }) => {
     }, 0);
     const { calories, duration } = calculateActivities(totalSteps);
     return {
-      averageDuration: `${duration.hours.value / trackedHistory.length}${duration.hours.unit}:${duration.minutes.value /
-        trackedHistory.length}${duration.minutes.unit}`,
+      averageDuration: `${duration.hours.value / trackedHistory.length}${duration.hours.unit.substring(0, 1)} ${duration
+        .minutes.value / trackedHistory.length}${duration.minutes.unit}`,
       calories: calories.value,
       totalSteps,
     };
